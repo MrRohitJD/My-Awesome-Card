@@ -1,0 +1,42 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} Contact Us - My Awesome Cart{% endblock %}
+{% block body %}
+{%if messages%}
+{% for message in messages %}
+  {% if message.tags %} 
+  <div class="alert p-100 mb-2 bg-success text-white" role="alert"> {{message}} 
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</div>
+<div class="container my-3">
+    <h3>Contact Us</h3>
+    <form action="/shop/contact" method="post">
+        {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name='Iname' placeholder="Enter Your Name">
+  </div>
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='Iemail' placeholder="Enter Your Email">
+  </div>
+
+    <div class="form-group">
+    <label for="name">Phone</label>
+    <input type="number" class="form-control" id="phone" name='Iphone' placeholder="Enter Your Phone Number">
+  </div>
+
+
+   <div class="form-group">
+    <label for="desc">How May We Help You?</label>
+    <textarea class="form-control" id="desc" name='Idesc' rows="3"></textarea>
+  </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+
+
+</div>
+{% endblock %}

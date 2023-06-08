@@ -1,0 +1,16 @@
+{% extends 'shop/basic.html' %}
+{% block title%} Thank You{% endblock %}
+{% block body %}
+
+{% load static %}
+<div class="container text-center py-5 my-5">
+    <h2><b>Thank You For Purchase!!!</b></h2>
+    <div class="container text-center mt-3 mb-2 pb-2">
+        <img src='{% static "shop/check_img.png" %}' class="check_mark" width="200" height="200" alt="...">
+        {% comment %} <p>Order Id {{id}}</p> {% endcomment %}
+    </div>
+    <p>Thank you for being Awesome, <br>  We hope you enjoy you Purchase!!</p><br>
+    <a href="/shop" class="btn btn-info" role="button">Purchase more</a>
+
+</div>
+{% endblock %}
