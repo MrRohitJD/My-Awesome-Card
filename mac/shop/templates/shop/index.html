@@ -10,13 +10,16 @@ background-color: blue;
 }
 .col-md-3 img{
 width: 180px;
-height: 222px;;
+height: 202px;;
 }
-body .carousel-indicator li{
-background-color: blue;
+.carousel-indicators li {
+  background-color: #020202;
 }
 body .carousel-indicators{
-bottom: 0;
+bottom: -100;
+}
+.carousel-indicators {
+  bottom: -41px;
 }
 body .carousel-control-prev-icon,
 body .carousel-control-next-icon{
@@ -63,7 +66,8 @@ padding-right: 0;
               <img class="mx-auto mt-2" src='/media/{{i.image}}' class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
-                <p class="card-text">{{i.product_desc|slice:"0:59"}}...</p>
+                <p class="card-text">{{i.product_desc|slice:"0:52"}}...</p>
+                <h6 class="card-title">Price: Rs- <span id="pricepr{{i.id}}">{{i.price}}</span></h6>
                 <span id="divpr{{i.id}}" class="divpr">
                   <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
                 </span>
@@ -111,14 +115,16 @@ padding-right: 0;
     var idstr = this.id.toString();
     if (cart[idstr] != undefined) {
       qty = cart[idstr][0] + 1;
-      name = cart[idstr] + 1; 
+      name = cart[idstr] + 1;
       cart[idstr] = [qty, name];
     } else {
-      qty =1;
-      name = document.getElementById('name' +idstr).innerHTML;
-      cart[idstr] = [qty, name];
+      qty = 1;
+      name = document.getElementById('name' + idstr).innerHTML;
+      price= document.getElementById('price'+ idstr).innerHTML;
+      cart[idstr] = [qty, name,parseInt(price)];
     }
-    console.log("this is idstr$$$$$$$$$$$$$$$$$"+name);
+  
+    console.log("this is idstr$$$$$$$$$$$$$$$$$" + name);
     updateCart(cart);
   });
 
@@ -134,7 +140,7 @@ padding-right: 0;
       popStr = popStr + "<b>" + i + "</b>. ";
       popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
       i = i + 1;
-      console.log("this is item "+item);
+      console.log("this is item " + item);
     }
     popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
     console.log(popStr);

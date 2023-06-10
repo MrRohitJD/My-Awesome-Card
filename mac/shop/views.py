@@ -65,6 +65,7 @@ def tracker(request):
     if request.method=="POST":
         orderID =request.POST.get('IorderId','')
         email =request.POST.get('Iemail','')
+        
         try:
             orders = Orders.objects.filter(Morder_id= orderID, Memail=email)
             if len(orders)>0:
@@ -76,10 +77,14 @@ def tracker(request):
                     return HttpResponse(response)
                 
             else:
-                pass
-        except:
-            pass
-    return render(request, 'shop/Trackerr.html')
+                return HttpResponse('{}')
+        except Exception as e:
+                return HttpResponse('{}')
+            
+    return render(request, 'shop/tracker.html')
+
+
+
 
 def thank_you(request):
     # id= orders.Morder_id
