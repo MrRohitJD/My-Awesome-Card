@@ -65,8 +65,8 @@ padding-right: 0;
             <div class="card" style="width: 16rem;">
               <img class="mx-auto mt-2" src='/media/{{i.image}}' class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
-                <p class="card-text">{{i.product_desc|slice:"0:52"}}...</p>
+                <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name|slice:"0:20"}}</h5>
+                <p class="card-text">{{i.product_desc|slice:"0:50"}}...</p>
                 <h6 class="card-title">Price: Rs- <span id="pricepr{{i.id}}">{{i.price}}</span></h6>
                 <span id="divpr{{i.id}}" class="divpr">
                   <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>

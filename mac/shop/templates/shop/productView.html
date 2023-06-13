@@ -9,8 +9,8 @@
         </div>
         <div class="col-sm-8">
 
-            <h5>{{prod.product_name}}</h5>
-            <p><b>RS - {{prod.price}}</b></p>
+            <h3>{{prod.product_name}}</h3>
+            <p><h5><b>RS - {{prod.price}}</b></h5></p>
             <p>{{prod.product_desc}}</p>
             <button type="button" class="btn-lg btn-warning mr-1 float-right mr-5 my-3">Buy Now</button>
 
@@ -26,6 +26,7 @@
 
 {% block js %}
 <script>
+    
   // Find out the cart items from localStorage
   if (localStorage.getItem('cart') == null) {
       var cart = {};
@@ -46,6 +47,7 @@
   
   });
   //Add Popover to cart
+
   $('#popcart').popover();
   {% comment %} document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>'); {% endcomment %}
   updatePopover(cart);

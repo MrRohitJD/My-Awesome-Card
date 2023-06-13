@@ -1,24 +1,73 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'blog/basic.html' %}
+<!------------------------------------------------------------------------------->
+{% block title %} My Awesome Cart Blog{% endblock %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!------------------------------------------------------------------------------->
+{% block css%}
+.card {
+background-color: #f7f8f8;
+}
+img.card-img-top {
+    width: 711px;
+    height: 149px;
+}
+{% endblock %}
 
-    <title>Hello, world!blog</title>
-  </head>
-  <body>
-    <h1>Hello, world!blog</h1>
-       {% load static %}
-<a href="{%static 'blog/mystatic.txt' %}" >Click me </a>
+<!------------------------------------------------------------------------------->
+<!-- Navbar -->
+{% block body %}
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+<!-- Blog content -->
+<div class="blog" style="background-color:#ffffff">
+  <div class="container mt-0">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="headline my-4">
+          <h2 class="mb-4">Latest Blog Posts</h2>
+        </div>
+
+        <!-- Blog Post 1 -->
+          {% for item in posts reversed %}
+
+        <div class="my-3">
+          <div class="shadow-none p-2  bg-light rounded-pill">
+
+            <div class="card  bg-#f2f2f2">
+                <a href="/shop" target="_blank">
+<!--              <img src="/media/{{item.thumbnail}}"   class="card-img-top width:711px" alt="...">-->
+              <img class="card-img-top width:711px" src="/media/{{item.thumbnail}}" width="711px" height="149px">
+                    </a>
+              <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.content_0|slice:"0:250"}}</p>
+                <p class="card-text"><small class="text-muted">{{item.publish_date}}</small></p>
+                  <button type="button" class="btn btn-link">Continue reading..</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
+<!------------------------------------------------------------------------------->
