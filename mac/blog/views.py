@@ -12,5 +12,6 @@ def index(request):
 
 def blogpost(request,id):
     post = BlogPost.objects.filter(post_id = id)[0]
-    param = {'posts':post}
+    all = BlogPost.objects.all()
+    param = {'posts':post,'all':all}
     return render(request, 'blog/blogpost.html',param)

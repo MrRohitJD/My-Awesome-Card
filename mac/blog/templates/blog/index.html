@@ -4,13 +4,7 @@
 
 <!------------------------------------------------------------------------------->
 {% block css%}
-.card {
-background-color: #f7f8f8;
-}
-img.card-img-top {
-    width: 711px;
-    height: 149px;
-}
+
 {% endblock %}
 
 <!------------------------------------------------------------------------------->
@@ -27,27 +21,25 @@ img.card-img-top {
         </div>
 
         <!-- Blog Post 1 -->
-          {% for item in posts reversed %}
+        {% for item in posts reversed %}
 
         <div class="my-3">
           <div class="shadow-none p-2  bg-light rounded-pill">
-
-            <div class="card  bg-#f2f2f2">
-                <a href="/shop" target="_blank">
-<!--              <img src="/media/{{item.thumbnail}}"   class="card-img-top width:711px" alt="...">-->
+            <div class="card bg-#f2f2f2">
+                <a href=" blogpost/{{item.post_id}}" target="_blank">
               <img class="card-img-top width:711px" src="/media/{{item.thumbnail}}" width="711px" height="149px">
-                    </a>
+              </a>
               <div class="card-body">
                 <h5 class="card-title">{{item.title}}</h5>
                 <p class="card-text">{{item.content_0|slice:"0:250"}}</p>
                 <p class="card-text"><small class="text-muted">{{item.publish_date}}</small></p>
-                  <button type="button" class="btn btn-link">Continue reading..</button>
+                <a href="/blog/blogpost/{{item.post_id}}" class="btn btn-link ">Continue reading..</a>
               </div>
 
             </div>
           </div>
         </div>
-          {% endfor %}
+        {% endfor %}
 
         <!-- Pagination -->
         <nav aria-label="Page navigation">
@@ -56,7 +48,7 @@ img.card-img-top {
               <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
             <li class="page-item active" aria-current="page">
-              <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+              <a class="page-link" href="/blog/blogpost/{{param}}">1 <span class="sr-only">(current)</span></a>
             </li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item">
@@ -66,8 +58,8 @@ img.card-img-top {
         </nav>
       </div>
     </div>
-    </div>
-    </div>
+  </div>
+</div>
 
 {% endblock %}
 <!------------------------------------------------------------------------------->

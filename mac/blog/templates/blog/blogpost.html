@@ -2,46 +2,71 @@
 {% block css%}
 {% endblock %}
 
- {% block body %}
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-md-8 blog-main">
-            <h3 class="pb-4 mb-4 font-italic border-bottom">
-                {{posts.title}}
-            </h3>
-            <div class="blog-post">
-                <p class="blog-post-meta">{{posts.publish_date}} by <a href="#"></a></p>
-                <h2 class="blog-post-title">{{posts.head_0}}</h2>
-                <p>{{posts.content_0}}</p>
-                <h2>{{posts.head_1}}</h2>
-                <p> {{posts.content_1}}</p>
-                <h2>{{posts.head_2}}</h2>
-                <p>{{posts.content_2}}</p>
-                <h2>{{posts.head_3}}</h2>
-                <p> {{posts.content_3}}</p>
-                <h2>{{posts.head_4}}</h2>
-                <p>{{posts.content_4}}</p>
-            </div><!-- /.blog-post -->
-        </div><!-- /.blog-main -->
-        <aside class="col-md-4 blog-sidebar">
-            <div class="p-4 mb-3 bg-light rounded">
-                <h4 class="font-italic">About</h4>
-                <p class="mb-0">My Awesome Cart is an <em>ecommerce website</em>. You can use it for buying and
-                    searching items online. </p>
-            </div>
-            <div class="p-4">
-                <h4 class="font-italic">Contact Us On: </h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ol>
-            </div>
-            <div class="p-2">
-                <img class="ml-5" src="/media/{{posts.image_0}}" width="233px" height="350px">
-            </div>
-        </aside><!-- /.blog-sidebar -->
-    </div>
+{% block body %}
+<div class="container ">
+  <div class="row mt-4">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">
+        {{posts.title}}
+      </h3>
+      <div class="blog-post ">
+        <p class="blog-post-meta">{{posts.publish_date}} by Rohit Jadhav<a href=""></a></p>
+        <div class="fb-like" data-href="http://127.0.0.1:8000/blog/blogpost/{{posts.post_id}}" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+        <p>{{posts.content_0}}</p>
+        <h2>{{posts.head_1}}</h2>
+        <p> {{posts.content_1}}</p>
+        <h2>{{posts.head_2}}</h2>
+        <p>{{posts.content_2}}</p>
+        <h2>{{posts.head_3}}</h2>
+        <p> {{posts.content_3}}</p>
+        <h2>{{posts.head_4}}</h2>
+        <p>{{posts.content_4}}</p>
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/{{posts.post_id}}/" data-width="700" data-numposts="10"></div>
+
+      </div><!-- /.blog-post -->
+
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item active" aria-current="page">
+
+
+            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+
+          </li>
+
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">About</h4>
+        <p class="mb-0">My Awesome Cart is an <em>ecommerce website</em>. You can use it for buying and
+          searching items online. </p>
+        <div class="my-3 fb-share-button" data-href="http://127.0.0.1:8000/blog/blogpost/{{posts.post_id}}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fblogpost%2F4&src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+      </div>
+      <div class="p-4">
+        <h4 class="font-italic">Contact Us On: </h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+      <div class="p-2">
+        <img class="ml-5" src="/media/{{posts.image_0}}" width="233px" height="350px">
+      </div>
+    </aside><!-- /.blog-sidebar -->
+  </div>
 </div>
 
 {% endblock %}
