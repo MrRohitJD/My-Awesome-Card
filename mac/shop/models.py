@@ -28,6 +28,7 @@ class Contact(models.Model):
 
 class Orders(models.Model):
     Morder_id =models.AutoField(primary_key=True)
+    Mamount= models.IntegerField(default=1)
     Mitems_json =models.CharField(max_length=5000)
     Mname =models.CharField(max_length=100)
     Memail =models.EmailField(max_length=100)

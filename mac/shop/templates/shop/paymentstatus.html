@@ -1,0 +1,27 @@
+
+<html>
+
+<head>
+   <title>Paytm Blink Checkout - Python</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+   <div class="container text-center">
+      <div class="shadow p-3 mb-5 bg-white rounded">
+         <h2>Transaction Stauts</h2>
+         <table class="table table-bordered">
+            {% for key, value in token.items %}
+            <tr>
+               <td>{{key}}</td>
+               <td>{{value}}</td>
+            </tr>
+            {% endfor %}
+         </table>
+      </div>
+   </div>
+</body>
+
+</html>
