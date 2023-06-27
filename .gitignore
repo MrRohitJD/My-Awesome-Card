@@ -1,3 +1,10 @@
-*.pyc
-__pycache__/
+venv/
+mac/mac/__pycache__/
+mac/blog/__pycache__/
+mac/shop/__pycache__/
+
+mac/blog/migrations/__pycache__/
+mac/shop/migrations/__pycache__/
+mac/PayTm/__pycache__/
+
 .vscode/
