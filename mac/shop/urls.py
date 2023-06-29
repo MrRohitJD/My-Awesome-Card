@@ -10,7 +10,6 @@ urlpatterns = [
     # path("productView",views.productView,name= "ProductView"),
     path("productViews/<int:myid>", views.productView, name="ProductView"),
     path("checkout",views.checkout,name= "Checkout"),
-    path("handelrequest",views.handelrequest,name= "handelrequest"),
     path("thank_you",views.thank_you,name="thank_you")
 
 ]
