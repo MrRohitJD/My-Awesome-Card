@@ -3,3 +3,5 @@ sqlparse==0.4.3
 tzdata==2023.3
 Pillow==9.5.0
 
+
+gunicorn
