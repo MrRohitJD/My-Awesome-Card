@@ -11,8 +11,8 @@ from django.views.decorators.csrf import csrf_exempt
 import requests
 import datetime
 
-MERCHANT_KEY = 'bKMfNxPPf_QdZppa'
-mid="DIY12386817555501617"
+MERCHANT_KEY = ''
+mid=""
 
 # Create your views here.
 def index(request):
